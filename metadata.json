@@ -1,0 +1,7 @@
+{
+  "name": "SkillSwap Neighborhood",
+  "description": "A hyperlocal skill exchange platform where neighbors trade expertise. Connect with people nearby to swap teaching for learning, powered by AI fair-trade suggestions.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
