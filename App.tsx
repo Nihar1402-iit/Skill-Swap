@@ -8,8 +8,7 @@ import MatchDiscovery from './components/MatchDiscovery';
 import ChatRoom from './components/ChatRoom';
 import { Card } from './components/ui/Card';
 
-// Removed Sarah, Marcus, Chloe, and James as requested. 
-// Starting with an empty or limited verified set.
+// Empty mock dataset as requested to allow only real registered users.
 const INITIAL_MOCK_USERS: UserProfile[] = [];
 
 const App: React.FC = () => {
@@ -83,6 +82,7 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col h-screen bg-white overflow-hidden font-sans">
+      {/* Real-time Push Notification Simulation */}
       {notification && (
         <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[90%] max-w-sm animate-in slide-in-from-top duration-300">
           <Card className="bg-slate-900 border-none shadow-2xl p-4 flex items-center gap-4">
@@ -97,6 +97,7 @@ const App: React.FC = () => {
         </div>
       )}
 
+      {/* Header */}
       <header className="px-6 py-5 bg-white border-b border-slate-100 flex items-center justify-between sticky top-0 z-10">
         <div>
           <h1 className="text-2xl font-black text-slate-900 tracking-tighter">SkillSwap</h1>
@@ -113,6 +114,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
+      {/* Content */}
       <main className="flex-1 relative flex flex-col min-h-0">
         {currentView === 'MAP' && (
           <SkillMap 
@@ -218,6 +220,7 @@ const App: React.FC = () => {
         )}
       </main>
 
+      {/* Bottom Nav Bar */}
       <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 w-[92%] max-w-md bg-white/90 backdrop-blur-xl border border-white/50 shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-[2.5rem] p-2 flex items-center justify-around z-50">
         <button 
           onClick={() => setCurrentView('MAP')}
@@ -245,6 +248,7 @@ const App: React.FC = () => {
         </button>
       </nav>
 
+      {/* Active Chat Overlay */}
       {currentView === 'MESSAGES' && selectedUser && (
         <ChatRoom 
           currentUser={currentUser} 
